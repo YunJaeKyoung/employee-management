@@ -1,0 +1,20 @@
+/*
+ * [학습 포인트] Tailwind CSS 설정
+ *
+ * Tailwind CSS는 유틸리티 클래스 기반의 CSS 프레임워크입니다.
+ * 기존에 CSS 파일에 .btn { background: blue; } 이렇게 쓰던 것을
+ * HTML(JSX)에서 className="bg-blue-500" 이렇게 직접 클래스를 조합합니다.
+ *
+ * 아래 3줄은 Tailwind CSS의 기본 레이어를 불러오는 코드입니다:
+ * - @tailwind base: HTML 기본 스타일 리셋
+ * - @tailwind components: 컴포넌트 스타일
+ * - @tailwind utilities: 유틸리티 클래스 (bg-blue-500, text-lg 등)
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 기본 폰트 설정 */
+body {
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}

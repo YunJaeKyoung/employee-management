@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.empmgmt.mapper.DashboardMapper">
+
+    <select id="getTotalEmployeeCount" resultType="int">
+        SELECT COUNT(*) FROM employees
+    </select>
+
+    <select id="getTotalDepartmentCount" resultType="int">
+        SELECT COUNT(*) FROM departments
+    </select>
+
+    <select id="getAverageSalary" resultType="long">
+        SELECT COALESCE(AVG(salary), 0) FROM employees
+    </select>
+
+    <select id="getNewEmployeesThisMonth" resultType="int">
+        SELECT COUNT(*)
+        FROM employees
+        WHERE MONTH(hire_date) = MONTH(CURRENT_DATE)
+          AND YEAR(hire_date) = YEAR(CURRENT_DATE)
+    </select>
+
+    <select id="getEmployeeCountByDepartment" resultType="map">
+        SELECT d.name AS department_name, COUNT(e.id) AS count
+        FROM departments d
+        LEFT JOIN employees e ON d.id = e.department_id
+        GROUP BY d.name
+        ORDER BY count DESC
+    </select>
+
+    <select id="getRecentEmployees" resultType="map">
+        SELECT e.name, e.position, e.hire_date AS hireDate, d.name AS departmentName
+        FROM employees e
+        LEFT JOIN departments d ON e.department_id = d.id
+        ORDER BY e.hire_date DESC
+        LIMIT 5
+    </select>
+
+</mapper>
