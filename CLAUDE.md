@@ -5,7 +5,7 @@ Java/Spring 개발자가 React를 단계별로 학습하기 위한 풀스택 직
 모든 React 파일에 JSP/jQuery와 비교하는 한국어 주석이 포함되어 있음.
 
 ## 기술 스택
-- **Backend**: Spring Boot 3.3.5 + Java 17 + MyBatis 3.0.3 + H2(인메모리) + JWT(JJWT 0.12.6)
+- **Backend**: Spring Boot 3.3.5 + Java 17 + MyBatis 3.0.3 + H2(파일모드) + JWT(JJWT 0.12.6)
 - **Frontend**: React 18 + Vite 5 + Tailwind CSS 3.4 + React Router v6 + Axios
 
 ## 빌드 및 실행
@@ -23,7 +23,7 @@ npm run dev
 ## 주요 URL
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:8080/api
-- H2 Console: http://localhost:8080/h2-console (JDBC URL: jdbc:h2:mem:empdb)
+- H2 Console: http://localhost:8080/h2-console (JDBC URL: jdbc:h2:file:./data/empdb)
 - Vite가 /api/* 요청을 자동으로 8080으로 프록시
 
 ## 기본 계정

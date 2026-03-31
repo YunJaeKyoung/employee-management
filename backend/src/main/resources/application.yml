@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:h2:mem:empdb
+    url: jdbc:h2:file:./data/empdb;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -13,7 +13,7 @@ spring:
       path: /h2-console
   sql:
     init:
-      mode: always
+      mode: embedded
       encoding: UTF-8
 
 mybatis:
