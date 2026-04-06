@@ -66,6 +66,8 @@ function Header() {
               <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
                 <span className="text-blue-600 font-semibold text-sm">
                   {user.name.charAt(0)}
+                  {/*{user.role}*/}
+                  {/*{user.name}*/}
                 </span>
               </div>
               <span className="text-sm text-gray-700 font-medium">{user.name}님</span>

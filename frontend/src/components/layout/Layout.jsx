@@ -47,6 +47,7 @@ function Layout() {
            *
            * JSP Tiles의 <tiles:insertAttribute name="body" />와 같은 역할!
            */}
+            {/*<h1>Outlet 자리에 원래 페이지가 나타납니다</h1>*/}
           <Outlet />
         </main>
       </div>

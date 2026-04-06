@@ -92,6 +92,7 @@ function LoginPage() {
    */
   const handleChange = (e) => {
     const { name, value } = e.target
+    // console.log(`필드:${name}, 값:${value}`)
     setFormData((prev) => ({
       ...prev,       // 기존 값 복사 (다른 필드 유지)
       [name]: value, // 변경된 필드만 업데이트

@@ -54,6 +54,10 @@ function SignupPage() {
     if (data.username.length < 4) {
       newErrors.username = '아이디는 4자 이상이어야 합니다'
     }
+    // // ↓ 새 규칙 추가
+    // if (data.email && !data.email.includes('@')) {
+    //   newErrors.email = '올바른 이메일 형식이 아닙니다'
+    // }
     if (data.password.length < 6) {
       newErrors.password = '비밀번호는 6자 이상이어야 합니다'
     }
@@ -184,6 +188,7 @@ function SignupPage() {
               placeholder="email@example.com"
               className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all"
             />
+            {/*{errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}*/}
           </div>
 
           {/* 비밀번호 */}

@@ -118,6 +118,7 @@ export function AuthProvider({ children }) {
     // localStorage에 토큰과 사용자 정보 저장 (브라우저 새로고침해도 유지)
     localStorage.setItem('token', token)
     const userData = { username, name, role }
+    // userData.test = '테스트'
     localStorage.setItem('user', JSON.stringify(userData))
 
     // 상태 업데이트 → AuthContext를 사용하는 모든 컴포넌트가 자동 업데이트

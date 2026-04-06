@@ -26,3 +26,7 @@ MERGE INTO employees (id, name, email, phone, position, hire_date, salary, depar
 (13, '노현우', 'noh.hw@company.com', '010-5555-6666', '데브옵스 엔지니어', '2022-04-01', 60000000, 1),
 (14, '서은지', 'seo.ej@company.com', '010-7777-8888', '채용 담당자', '2023-03-20', 42000000, 2),
 (15, '장동건', 'jang.dg@company.com', '010-9999-0000', '콘텐츠 마케터', '2022-11-10', 45000000, 3);
+
+-- AUTO_INCREMENT 카운터를 샘플 데이터 이후로 리셋 (서버 재시작 시 ID 충돌 방지)
+ALTER TABLE departments ALTER COLUMN id RESTART WITH 100;
+ALTER TABLE employees ALTER COLUMN id RESTART WITH 100;
